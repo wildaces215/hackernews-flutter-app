@@ -23,7 +23,8 @@ class Job {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    // ignore: prefer_collection_literals
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['by'] = by;
     data['id'] = id;
     data['score'] = score;
