@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           // This is the theme of your application.
           //
@@ -37,18 +38,23 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
           appBarTheme: const AppBarTheme(
-            elevation: 5.0,
-            backgroundColor: Colors.black,
-          ),
+              elevation: 5.0,
+              backgroundColor: Colors.white,
+              iconTheme: IconThemeData(color: Colors.black),
+              titleTextStyle: TextStyle(color: Colors.black)),
           textTheme:
               GoogleFonts.noticiaTextTextTheme(Theme.of(context).textTheme)),
-      home: MultiBlocProvider(providers: [
-        BlocProvider<StoriesCubit>(
-            create: (BuildContext context) => StoriesCubit()..getStories()),
-        BlocProvider<JobCubit>(
-          create: (BuildContext context) => JobCubit()..getJobs(),
-        )
-      ], child: AppContainer()),
+      home: MultiBlocProvider(
+          providers: [
+            BlocProvider<StoriesCubit>(
+                create: (BuildContext context) => StoriesCubit()..getStories()),
+            BlocProvider<JobCubit>(
+              create: (BuildContext context) => JobCubit()..getJobs(),
+            )
+          ],
+          child: Container(
+            child: AppContainer(),
+          )),
     );
   }
 }

@@ -16,9 +16,11 @@ class JobScreen extends StatelessWidget {
     //late List;
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Jobs', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.black,
-        ),
+            title: const Text(
+              'Jobs',
+              style: TextStyle(),
+            ),
+            titleTextStyle: Theme.of(context).textTheme.headline6),
         body: BlocBuilder<JobCubit, List<Job>>(builder: (context, jobs) {
           if (jobs.isEmpty) {
             return Center(child: CircularProgressIndicator());

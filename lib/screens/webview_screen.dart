@@ -10,6 +10,7 @@ class WebviewScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             leading: IconButton(
+                color: Colors.black,
                 onPressed: () {
                   Navigator.pop(context);
                 },

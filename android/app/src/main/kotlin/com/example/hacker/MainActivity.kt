@@ -1,4 +1,4 @@
-package com.example.hacker
+package com.thinkingclearly.hacker
 
 import io.flutter.embedding.android.FlutterActivity
 
